@@ -44,18 +44,25 @@ const CategoryList: React.FC<{ categories: Categories, change: Function }> = ({ 
 const Question: React.FC<{ question: Question }> = ({ question }) => {
   return (
     <React.Fragment>
-      <p> {question.question} </p>
-      <ul>
-        <li>  <em> {question.correct_answer} </em> </li>
-        {question.incorrect_answers.map((question, index) =>
-          <li key={index}> {question} </li>
-        )}
-      </ul>
+      {question.correct_answer !== undefined &&
+        <React.Fragment>
+
+          <p> {question.question} </p>
+          <ul>
+            <li>  <em> {question.correct_answer} </em> </li>
+            {question.incorrect_answers.map((question, index) =>
+              <li key={index}> {question} </li>
+            )}
+          </ul>
+        </React.Fragment>
+
+      }
+
     </React.Fragment>
   );
 }
 
-const QuestionsTable: React.FC<{ questions: Questions }> = ({ questions }) => {
+const QuestionsTable: React.FC<{ questions: Questions, onRowClick: Function }> = ({ questions, onRowClick }) => {
   return (
     <React.Fragment>
       <table>
@@ -70,7 +77,7 @@ const QuestionsTable: React.FC<{ questions: Questions }> = ({ questions }) => {
         <tbody>
           {questions.results &&
             questions.results.map((question, index) =>
-              <tr key={index}>
+              <tr key={index} onClick={() => onRowClick(question)}>
                 <td>{question.question}</td>
                 <td>{question.category}</td>
                 <td>{question.difficulty}</td>
@@ -84,23 +91,14 @@ const QuestionsTable: React.FC<{ questions: Questions }> = ({ questions }) => {
   );
 }
 
-const QuestionsList: React.FC<{ questions: Questions }> = ({ questions }) => {
-  return (
-    <React.Fragment>
-      {questions.results &&
-        questions.results.map((question, index) =>
-          <Question key={index} question={question} />
-        )}
-    </React.Fragment>
-  );
-}
-
 const App: React.FC = () => {
   const emptyCategoryArray = {} as Categories
   const initialQuestions = {} as Questions
+  const initialQuestion = {} as Question
   const [categories, setCategories] = useState(emptyCategoryArray);
   const [selectedCategoryId, setSelectedCategoryId] = useState(-1);
   const [questions, setQuestions] = useState(initialQuestions);
+  const [selectedQuestion, setSelectedQuestion] = useState(initialQuestion);
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -132,7 +130,11 @@ const App: React.FC = () => {
         {categories !== emptyCategoryArray &&
           <CategoryList categories={categories} change={setSelectedCategoryId}> </CategoryList>}
         {questions !== initialQuestions &&
-          <QuestionsTable questions={questions}> </QuestionsTable>
+          <QuestionsTable onRowClick={setSelectedQuestion} questions={questions}> </QuestionsTable>
+        }
+        {selectedQuestion !== initialQuestion &&
+          <Question question={selectedQuestion} />
+
         }
       </React.Fragment>
     </div >
