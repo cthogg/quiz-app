@@ -1,6 +1,6 @@
-import React from 'react';
-import './App.css';
-import { categories, allQuestions } from './categories'
+import React, { useState, useEffect } from 'react'; import './App.css';
+import { allQuestions } from './categories'
+import axios from 'axios';
 
 interface Category {
   id: number,
@@ -68,10 +68,29 @@ const QuestionsList: React.FC<{ questions: Questions }> = ({ questions }) => {
 }
 
 const App: React.FC = () => {
+  const emptyCategoryArray = {} as Categories
+  const [categories, setCategories] = useState(emptyCategoryArray);
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      const result = await axios(
+        `https://opentdb.com/api_category.php`,
+      );
+      console.log('result.data:', result.data)
+      setCategories(result.data)
+    };
+    fetchCategories();
+  }, []);
+  console.log(categories)
+
   return (
     <div className="App">
-      <CategoryList categories={categories}> </CategoryList>
-      <QuestionsList questions={allQuestions}> </QuestionsList>
+      {categories !== emptyCategoryArray &&
+        <React.Fragment>
+          <CategoryList categories={categories}> </CategoryList>
+          <QuestionsList questions={allQuestions}> </QuestionsList>
+        </React.Fragment>
+      }
     </div >
   );
 }
