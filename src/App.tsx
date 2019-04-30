@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'; import './App.css';
 import axios from 'axios';
+var he = require('he');
 
 interface Category {
   id: number,
@@ -47,7 +48,7 @@ const Question: React.FC<{ question: Question }> = ({ question }) => {
       {question.correct_answer !== undefined &&
         <React.Fragment>
 
-          <p> {question.question} </p>
+          <p> {he.decode(question.question)} </p>
           <ul>
             <li>  <em> {question.correct_answer} </em> </li>
             {question.incorrect_answers.map((question, index) =>
@@ -78,7 +79,7 @@ const QuestionsTable: React.FC<{ questions: Questions, onRowClick: Function }> =
           {questions.results &&
             questions.results.map((question, index) =>
               <tr key={index} onClick={() => onRowClick(question)}>
-                <td>{question.question}</td>
+                <td>{he.decode(question.question)}</td>
                 <td>{question.category}</td>
                 <td>{question.difficulty}</td>
               </tr>
@@ -106,12 +107,22 @@ const App: React.FC = () => {
         `https://opentdb.com/api_category.php`,
       );
       setCategories(result.data);
-      setSelectedCategoryId(result.data.trivia_categories[0])
     };
     fetchCategories();
   }, []);
 
   useEffect(() => {
+    if (selectedCategoryId === -1) {
+      const fetchData = async () => {
+        const result = await axios(
+          `https://opentdb.com/api.php?amount=10`,
+        );
+        setQuestions(result.data);
+      };
+      fetchData();
+
+    }
+
     if (selectedCategoryId !== -1) {
       const fetchData = async () => {
         const result = await axios(
