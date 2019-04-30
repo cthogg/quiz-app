@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'; import './App.css';
-import { allQuestions } from './categories'
 import axios from 'axios';
 
 interface Category {
@@ -27,16 +26,15 @@ interface Categories {
 }
 
 
-const CategoryList: React.FC<{ categories: Categories }> = ({ categories }) => {
+const CategoryList: React.FC<{ categories: Categories, change: Function }> = ({ categories, change }) => {
   const triviaCategories = categories.trivia_categories
   const listItems = triviaCategories.map((category: Category) =>
-    // Correct! Key should be specified inside the array.
-    <option key={category.id} value={category.name}>{category.name}</option>
+    <option key={category.id} value={category.id}>{category.name}</option>
   );
   return (
     <React.Fragment>
       <label htmlFor="pet-select">Choose a Category</label>
-      <select id="pet-select">
+      <select id="pet-select" onChange={e => change(e.target.value)} >
         {listItems}
       </select>
     </React.Fragment>
@@ -60,37 +58,55 @@ const Question: React.FC<{ question: Question }> = ({ question }) => {
 const QuestionsList: React.FC<{ questions: Questions }> = ({ questions }) => {
   return (
     <React.Fragment>
-      {questions.results.map((question, index) =>
-        <Question key={index} question={question} />
-      )}
+      {questions.results &&
+        questions.results.map((question, index) =>
+          <Question key={index} question={question} />
+        )}
     </React.Fragment>
   );
 }
 
 const App: React.FC = () => {
   const emptyCategoryArray = {} as Categories
+  const initialQuestions = {} as Questions
   const [categories, setCategories] = useState(emptyCategoryArray);
+  const [selectedCategoryId, setSelectedCategoryId] = useState(-1);
+  const [questions, setQuestions] = useState(initialQuestions);
 
   useEffect(() => {
     const fetchCategories = async () => {
       const result = await axios(
         `https://opentdb.com/api_category.php`,
       );
-      console.log('result.data:', result.data)
-      setCategories(result.data)
+      setCategories(result.data);
+      setSelectedCategoryId(result.data.trivia_categories[0])
     };
     fetchCategories();
   }, []);
-  console.log(categories)
+
+  useEffect(() => {
+    console.log('fired')
+    if (selectedCategoryId !== -1) {
+      const fetchData = async () => {
+        const result = await axios(
+          `https://opentdb.com/api.php?amount=10&category=${selectedCategoryId}`,
+        );
+        setQuestions(result.data);
+      };
+      fetchData();
+
+    }
+  }, [selectedCategoryId]);
 
   return (
     <div className="App">
-      {categories !== emptyCategoryArray &&
-        <React.Fragment>
-          <CategoryList categories={categories}> </CategoryList>
-          <QuestionsList questions={allQuestions}> </QuestionsList>
-        </React.Fragment>
-      }
+      <React.Fragment>
+        {categories !== emptyCategoryArray &&
+          <CategoryList categories={categories} change={setSelectedCategoryId}> </CategoryList>}
+        {questions !== initialQuestions &&
+          <QuestionsList questions={questions}> </QuestionsList>
+        }
+      </React.Fragment>
     </div >
   );
 }
