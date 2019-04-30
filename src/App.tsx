@@ -1,24 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { categories } from './categories'
+
+interface Category {
+  id: number,
+  name: string
+}
+
+interface Categories {
+  "trivia_categories": Array<Category>
+}
+
+
+const CategoryList: React.FC<{ categories: Categories }> = ({ categories }) => {
+  const triviaCategories = categories.trivia_categories
+  const listItems = triviaCategories.map((category: Category) =>
+    // Correct! Key should be specified inside the array.
+    <option key={category.id} value={category.name}>{category.name}</option>
+  );
+  return (
+    <React.Fragment>
+      <label htmlFor="pet-select">Choose a Category</label>
+      <select id="pet-select">
+        {listItems}
+      </select>
+    </React.Fragment>
+  );
+}
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CategoryList categories={categories}> </CategoryList>
     </div>
   );
 }
