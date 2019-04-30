@@ -55,6 +55,35 @@ const Question: React.FC<{ question: Question }> = ({ question }) => {
   );
 }
 
+const QuestionsTable: React.FC<{ questions: Questions }> = ({ questions }) => {
+  return (
+    <React.Fragment>
+      <table>
+        <thead>
+          <tr>
+            <th> Question</th>
+            <th> Category</th>
+            <th> Difficulty</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          {questions.results &&
+            questions.results.map((question, index) =>
+              <tr key={index}>
+                <td>{question.question}</td>
+                <td>{question.category}</td>
+                <td>{question.difficulty}</td>
+              </tr>
+            )}
+
+        </tbody>
+      </table>
+
+    </React.Fragment>
+  );
+}
+
 const QuestionsList: React.FC<{ questions: Questions }> = ({ questions }) => {
   return (
     <React.Fragment>
@@ -85,7 +114,6 @@ const App: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    console.log('fired')
     if (selectedCategoryId !== -1) {
       const fetchData = async () => {
         const result = await axios(
@@ -104,7 +132,7 @@ const App: React.FC = () => {
         {categories !== emptyCategoryArray &&
           <CategoryList categories={categories} change={setSelectedCategoryId}> </CategoryList>}
         {questions !== initialQuestions &&
-          <QuestionsList questions={questions}> </QuestionsList>
+          <QuestionsTable questions={questions}> </QuestionsTable>
         }
       </React.Fragment>
     </div >
