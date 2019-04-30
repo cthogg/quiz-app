@@ -1,11 +1,26 @@
 import React from 'react';
 import './App.css';
-import { categories } from './categories'
+import { categories, allQuestions } from './categories'
 
 interface Category {
   id: number,
   name: string
 }
+
+interface Question {
+  "category": string,
+  "type": string,
+  "difficulty": string,
+  "question": string
+  "correct_answer": string
+  "incorrect_answers": Array<string>
+}
+
+interface Questions {
+  "response_code": number,
+  "results": Array<Question>
+}
+
 
 interface Categories {
   "trivia_categories": Array<Category>
@@ -28,11 +43,36 @@ const CategoryList: React.FC<{ categories: Categories }> = ({ categories }) => {
   );
 }
 
+const Question: React.FC<{ question: Question }> = ({ question }) => {
+  return (
+    <React.Fragment>
+      <p> {question.question} </p>
+      <ul>
+        <li>  <em> {question.correct_answer} </em> </li>
+        {question.incorrect_answers.map((question, index) =>
+          <li key={index}> {question} </li>
+        )}
+      </ul>
+    </React.Fragment>
+  );
+}
+
+const QuestionsList: React.FC<{ questions: Questions }> = ({ questions }) => {
+  return (
+    <React.Fragment>
+      {questions.results.map((question, index) =>
+        <Question key={index} question={question} />
+      )}
+    </React.Fragment>
+  );
+}
+
 const App: React.FC = () => {
   return (
     <div className="App">
       <CategoryList categories={categories}> </CategoryList>
-    </div>
+      <QuestionsList questions={allQuestions}> </QuestionsList>
+    </div >
   );
 }
 
