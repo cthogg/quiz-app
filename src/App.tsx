@@ -27,7 +27,7 @@ interface Categories {
 }
 
 
-const CategoryList: React.FC<{ categories: Categories, change: Function }> = ({ categories, change }) => {
+export const CategoryList: React.FC<{ categories: Categories, change: Function }> = ({ categories, change }) => {
   const triviaCategories = categories.trivia_categories
   const listItems = triviaCategories.map((category: Category) =>
     <option key={category.id} value={category.id}>{category.name}</option>
@@ -42,7 +42,7 @@ const CategoryList: React.FC<{ categories: Categories, change: Function }> = ({ 
   );
 }
 
-const Question: React.FC<{ question: Question }> = ({ question }) => {
+export const Question: React.FC<{ question: Question }> = ({ question }) => {
   return (
     <React.Fragment>
       {question.correct_answer !== undefined &&

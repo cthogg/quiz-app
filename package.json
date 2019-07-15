@@ -8,11 +8,13 @@
     "@types/node": "11.13.8",
     "@types/react": "16.8.15",
     "@types/react-dom": "16.8.4",
+    "@types/react-test-renderer": "^16.8.2",
     "axios": "^0.18.0",
     "he": "^1.2.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.0",
+    "react-test-renderer": "^16.8.6",
     "typescript": "3.4.5"
   },
   "scripts": {

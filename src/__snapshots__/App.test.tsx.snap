@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Category List renders correctly 1`] = `
+Array [
+  <label
+    htmlFor="pet-select"
+  >
+    Choose a Category
+  </label>,
+  <select
+    id="pet-select"
+    onChange={[Function]}
+  >
+    <option
+      value={343}
+    >
+      bob
+    </option>
+  </select>,
+]
+`;
+
+exports[`renders correctly 1`] = `
+<div
+  className="App"
+/>
+`;
