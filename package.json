@@ -21,7 +21,14 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test:ci": "CI=true react-scripts test --colors"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn test:ci",
+      "pre-push": "yarn test:ci"
+    }
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -37,5 +44,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "husky": "^3.1.0"
   }
 }

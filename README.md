@@ -9,6 +9,7 @@
 - I decided to use Typescript as a nice exercise for me.
 
 ## If I had more time
+- add backend sanitizer for better types.
 - Add 'any' to the choose a category dropdown and make this show at default.
 - Abbreviating any information that is too long. 
 - For this the question should be displayed on another page that shows the question and the possible answers with the correct answer being highlighted.
