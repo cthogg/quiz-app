@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
-import CategoryList from "./components/CategoryList";
-import QuestionComp from "./components/Question";
-import QuestionsTable from "./components/QuestionsTable";
 import { Categories, Questions, Question } from "./types";
+import QuizEngine from "./QuizEngine";
+
+export const emptyCategoryArray = {} as Categories;
+export const initialQuestions = {} as Questions;
+export const initialQuestion = {} as Question;
 
 const App: React.FC = () => {
-  const emptyCategoryArray = {} as Categories;
-  const initialQuestions = {} as Questions;
-  const initialQuestion = {} as Question;
   const [categories, setCategories] = useState(emptyCategoryArray);
   const [selectedCategoryId, setSelectedCategoryId] = useState(-1);
   const [questions, setQuestions] = useState(initialQuestions);
@@ -45,24 +44,16 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      <React.Fragment>
-        {categories !== emptyCategoryArray && (
-          <CategoryList categories={categories} change={setSelectedCategoryId}>
-            {" "}
-          </CategoryList>
-        )}
-        {questions !== initialQuestions && (
-          <QuestionsTable
-            onRowClick={setSelectedQuestion}
-            questions={questions}
-          >
-            {" "}
-          </QuestionsTable>
-        )}
-        {selectedQuestion !== initialQuestion && (
-          <QuestionComp question={selectedQuestion} />
-        )}
-      </React.Fragment>
+      <QuizEngine
+        onRowClick={setSelectedQuestion}
+        onListClick={setSelectedCategoryId}
+        categories={categories}
+        selectedQuestion={selectedQuestion}
+        questions={questions}
+        initialQuestions={initialQuestions}
+      >
+        {" "}
+      </QuizEngine>
     </div>
   );
 };
