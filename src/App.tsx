@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
 import QuizEngine from "./QuizEngine";
-import { APICategories } from "./APITypes";
 import {
   Question,
-  convertBackendQuestionsToFrontendQuestions
+  convertBackendQuestionsToFrontendQuestions,
+  Category,
+  convertBackendCategoriesToFrontendCategories
 } from "./frontendTypes";
 
-export const emptyCategoryArray = {} as APICategories;
+export const emptyCategoryArray = {} as Category[];
 export const initialQuestions = [] as Question[];
 export const initialQuestion = {} as Question;
 
@@ -26,7 +27,7 @@ const App: React.FC = () => {
     const fetchCategories = async () => {
       setIsLoading(true);
       const result = await axios(CATEGORY_URL);
-      setCategories(result.data);
+      setCategories(convertBackendCategoriesToFrontendCategories(result.data));
       setIsLoading(false);
     };
     fetchCategories();

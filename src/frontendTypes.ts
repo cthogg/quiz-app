@@ -1,4 +1,4 @@
-import { APIQuestions } from "./APITypes";
+import { APIQuestions, APICategories } from "./APITypes";
 
 export interface Answer {
   answer: string;
@@ -10,6 +10,11 @@ export interface Question {
   category: string;
   difficulty: string;
   answers: Answer[];
+}
+
+export interface Category {
+  id: number;
+  name: string;
 }
 
 const convertBackedAnswersToFrontendAnswers = (
@@ -34,5 +39,13 @@ export const convertBackendQuestionsToFrontendQuestions = (
     ).concat(
       convertBackedAnswersToFrontendAnswers([question.correct_answer], true)
     )
+  }));
+};
+
+export const convertBackendCategoriesToFrontendCategories = (
+  categories: APICategories
+): Category[] => {
+  return categories.trivia_categories.map(category => ({
+    ...category
   }));
 };

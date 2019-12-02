@@ -4,17 +4,14 @@ import App from "./App";
 import renderer from "react-test-renderer";
 import CategoryList from "./components/CategoryList";
 import QuestionsTable from "./components/QuestionsTable";
-import { APICategories, APIQuestion } from "./APITypes";
-import { Question } from "./frontendTypes";
+import { Question, Category } from "./frontendTypes";
 
-const cat: APICategories = {
-  trivia_categories: [
-    {
-      id: 343,
-      name: "bob"
-    }
-  ]
-};
+const cat: Category[] = [
+  {
+    id: 343,
+    name: "bob"
+  }
+];
 it("Category List renders correctly", () => {
   const tree = renderer
     .create(

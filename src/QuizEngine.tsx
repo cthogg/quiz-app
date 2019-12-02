@@ -3,11 +3,10 @@ import CategoryList from "./components/CategoryList";
 import QuestionsTable from "./components/QuestionsTable";
 import QuestionComp from "./components/Question";
 import { emptyCategoryArray, initialQuestions, initialQuestion } from "./App";
-import { APICategories, APIQuestions, APIQuestion } from "./APITypes";
-import { Question } from "./frontendTypes";
+import { Question, Category } from "./frontendTypes";
 
 interface QuizEngineProps {
-  categories: APICategories;
+  categories: Category[];
   questions: Question[];
   selectedQuestion: Question;
   initialQuestions: Question[];

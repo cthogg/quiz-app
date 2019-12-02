@@ -1,12 +1,11 @@
 import React from "react";
-import { APICategories, APICategory } from "../APITypes";
+import { Category } from "../frontendTypes";
 
 const CategoryList: React.FC<{
-  categories: APICategories;
+  categories: Category[];
   change: Function;
 }> = ({ categories, change }) => {
-  const triviaCategories = categories.trivia_categories;
-  const listItems = triviaCategories.map((category: APICategory) => (
+  const listItems = categories.map((category: Category) => (
     <option key={category.id} value={category.id}>
       {category.name}
     </option>
