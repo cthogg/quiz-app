@@ -1,3 +1,6 @@
+# Quizmaster App
+- An app to help quizmasters generate a quiz.
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/53180c2e-e4d9-4657-8e3d-f2c69fb38016/deploy-status)](https://app.netlify.com/sites/mystifying-roentgen-274bc4/deploys)
 
 ## Commands
@@ -11,6 +14,7 @@
 - I decided to use Typescript as a nice exercise for me.
 
 ## If I had more time
+- add eslint and typescript checks to ci. 
 - add backend sanitizer for better types.
 - Add 'any' to the choose a category dropdown and make this show at default.
 - Abbreviating any information that is too long. 
