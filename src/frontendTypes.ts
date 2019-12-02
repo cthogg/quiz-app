@@ -1,4 +1,5 @@
 import { APIQuestions, APICategories } from "./APITypes";
+import he from "he";
 
 export interface Answer {
   answer: string;
@@ -22,7 +23,7 @@ const convertBackedAnswersToFrontendAnswers = (
   isCorrect = false
 ): Answer[] => {
   return backendAnswers.map(answer => ({
-    answer: answer,
+    answer: he.decode(answer),
     isCorrect: isCorrect
   }));
 };
@@ -31,9 +32,9 @@ export const convertBackendQuestionsToFrontendQuestions = (
   questions: APIQuestions
 ): Question[] => {
   return questions.results.map(question => ({
-    question: question.question,
-    category: question.category,
-    difficulty: question.difficulty,
+    question: he.decode(question.question),
+    category: he.decode(question.category),
+    difficulty: he.decode(question.difficulty),
     answers: convertBackedAnswersToFrontendAnswers(
       question.incorrect_answers
     ).concat(
