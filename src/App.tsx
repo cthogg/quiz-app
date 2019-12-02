@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react'; import './App.css';
 import axios from 'axios';
 var he = require('he');
 
-interface Category {
+export interface Category {
   id: number,
   name: string
 }
 
-interface Question {
+export interface Question {
   "category": string,
   "type": string,
   "difficulty": string,
@@ -16,13 +16,13 @@ interface Question {
   "incorrect_answers": Array<string>
 }
 
-interface Questions {
+export interface Questions {
   "response_code": number,
   "results": Array<Question>
 }
 
 
-interface Categories {
+export interface Categories {
   "trivia_categories": Array<Category>
 }
 
@@ -63,7 +63,7 @@ export const Question: React.FC<{ question: Question }> = ({ question }) => {
   );
 }
 
-const QuestionsTable: React.FC<{ questions: Questions, onRowClick: Function }> = ({ questions, onRowClick }) => {
+export const QuestionsTable: React.FC<{ questions: Questions, onRowClick: Function }> = ({ questions, onRowClick }) => {
   return (
     <React.Fragment>
       <table>
