@@ -41,8 +41,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && yarn lint:all && yarn test:ci",
-      "pre-push": "yarn test:ci"
+      "pre-commit": "yarn typecheck:all && lint-staged && yarn lint:all && yarn test:ci",
+      "pre-push": ""
     }
   },
   "eslintConfig": {

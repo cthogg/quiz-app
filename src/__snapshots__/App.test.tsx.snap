@@ -12,6 +12,7 @@ exports[`Category List renders correctly 1`] = `
   <select
     id="pet-select"
     onChange={[Function]}
+    value={1}
   >
     <option
       value={343}
@@ -40,6 +41,7 @@ Array [
     <select
       id="pet-select"
       onChange={[Function]}
+      value={1}
     >
       <option
         value={1}

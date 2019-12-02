@@ -16,7 +16,7 @@ const cat: Category[] = [
 it("Category List renders correctly", () => {
   const tree = renderer
     .create(
-      <CategoryList categories={cat} change={() => "hi"}>
+      <CategoryList selectedCategoryId={1} categories={cat} change={() => "hi"}>
         {" "}
       </CategoryList>
     )
@@ -56,6 +56,7 @@ it("Question Engine Renders Correctly", () => {
   const tree = renderer
     .create(
       <QuizEngine
+        selectedCategoryId={1}
         categories={[{ id: 1, name: "sport" }]}
         onListClick={() => null}
         questions={exampleResults}
