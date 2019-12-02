@@ -4,12 +4,13 @@ import QuestionsTable from "./components/QuestionsTable";
 import QuestionComp from "./components/Question";
 import { emptyCategoryArray, initialQuestions, initialQuestion } from "./App";
 import { APICategories, APIQuestions, APIQuestion } from "./APITypes";
+import { Question } from "./frontendTypes";
 
 interface QuizEngineProps {
   categories: APICategories;
-  questions: APIQuestions;
-  selectedQuestion: APIQuestion;
-  initialQuestions: APIQuestions;
+  questions: Question[];
+  selectedQuestion: Question;
+  initialQuestions: Question[];
   onRowClick: Function;
   onListClick: Function;
 }

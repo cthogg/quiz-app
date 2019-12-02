@@ -30,3 +30,4 @@
 - accessibility
 - lighthouse score.
 - look at bug in incorrect_answers.map JoJo&#039;s Bizarre Adventure 
+- show if no response.

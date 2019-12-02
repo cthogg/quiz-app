@@ -5,6 +5,7 @@ import renderer from "react-test-renderer";
 import CategoryList from "./components/CategoryList";
 import QuestionsTable from "./components/QuestionsTable";
 import { APICategories, APIQuestion } from "./APITypes";
+import { Question } from "./frontendTypes";
 
 const cat: APICategories = {
   trivia_categories: [
@@ -25,33 +26,38 @@ it("Category List renders correctly", () => {
   expect(tree).toMatchSnapshot();
 });
 
-const exampleResults: APIQuestion[] = [
+const exampleResults: Question[] = [
   {
     category: "Entertainment: Video Games",
-    type: "multiple",
     difficulty: "hard",
     question:
       "In the Super Mario Bros. Series, what is Yoshi&#039;s scientific name?",
-    correct_answer: "T. Yoshisaur Munchakoopas",
-    incorrect_answers: ["Yoshi", "T. Yoshisotop Munchakoopas", "Yossy"]
+    answers: [
+      { answer: "T. Yoshisaur Munchakoopas", isCorrect: true },
+      { answer: "Yoshi", isCorrect: false },
+      { answer: "T. Yoshisotop Munchakoopas", isCorrect: false },
+      { answer: "Yossy", isCorrect: false },
+      { answer: "Anne Boleyn", isCorrect: false }
+    ]
   },
   {
     category: "History",
-    type: "multiple",
     difficulty: "medium",
     question: "Which of his six wives was Henry VIII married to the longest?",
-    correct_answer: "Catherine of Aragon",
-    incorrect_answers: ["Anne Boleyn", "Jane Seymour", "Catherine Parr"]
+    answers: [
+      { answer: "Catherine of Aragon", isCorrect: true },
+      { answer: "Jane Seymour", isCorrect: false },
+      { answer: "Anne Boleyn", isCorrect: false },
+      { answer: "Catherin Parr", isCorrect: false },
+      { answer: "Anne Boleyn", isCorrect: false }
+    ]
   }
 ];
 
 it("Questions Table Renders Correctly", () => {
   const tree = renderer
     .create(
-      <QuestionsTable
-        onRowClick={() => null}
-        questions={{ response_code: 0, results: exampleResults }}
-      >
+      <QuestionsTable onRowClick={() => null} questions={exampleResults}>
         {" "}
       </QuestionsTable>
     )

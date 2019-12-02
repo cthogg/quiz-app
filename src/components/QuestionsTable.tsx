@@ -1,9 +1,9 @@
 import React from "react";
 import he from "he";
-import { APIQuestions } from "../APITypes";
+import { Question } from "../frontendTypes";
 
 const QuestionsTable: React.FC<{
-  questions: APIQuestions;
+  questions: Question[];
   onRowClick: Function;
 }> = ({ questions, onRowClick }) => {
   return (
@@ -17,8 +17,8 @@ const QuestionsTable: React.FC<{
           </tr>
         </thead>
         <tbody>
-          {questions.results &&
-            questions.results.map((question, index) => (
+          {questions &&
+            questions.map((question, index) => (
               <tr key={index} onClick={() => onRowClick(question)}>
                 <td>{he.decode(question.question)}</td>
                 <td>{question.category}</td>

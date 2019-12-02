@@ -1,28 +1,22 @@
 import React from "react";
 import he from "he";
 import _ from "lodash";
-import { APIQuestion } from "../APITypes";
-const QuestionComp: React.FC<{ question: APIQuestion }> = ({ question }) => {
-  const incorrectAnswers = question.incorrect_answers.map(a => ({
-    answer: a,
-    isCorrect: false
-  }));
-  const correctAnswer = { answer: question.correct_answer, isCorrect: true };
-  const allQuestions = incorrectAnswers.concat(correctAnswer);
+import { Question } from "../frontendTypes";
+const QuestionComp: React.FC<{ question: Question }> = ({ question }) => {
   return (
     <React.Fragment>
-      {question.correct_answer !== undefined && (
+      {question !== undefined && (
         <React.Fragment>
           <p> {he.decode(question.question)} </p>
           <ul>
-            {_.shuffle(allQuestions).map((question, index) => {
-              return question.isCorrect ? (
+            {_.shuffle(question.answers).map((answer, index) => {
+              return answer.isCorrect ? (
                 <em>
                   {" "}
-                  <li key={index}> {question.answer} </li>{" "}
+                  <li key={index}> {answer.answer} </li>{" "}
                 </em>
               ) : (
-                <li key={index}> {question.answer} </li>
+                <li key={index}> {answer.answer} </li>
               );
             })}
           </ul>

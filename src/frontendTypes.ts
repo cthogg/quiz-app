@@ -31,6 +31,8 @@ export const convertBackendQuestionsToFrontendQuestions = (
     difficulty: question.difficulty,
     answers: convertBackedAnswersToFrontendAnswers(
       question.incorrect_answers
-    ).concat(convertBackedAnswersToFrontendAnswers([question.correct_answer]))
+    ).concat(
+      convertBackedAnswersToFrontendAnswers([question.correct_answer], true)
+    )
   }));
 };
