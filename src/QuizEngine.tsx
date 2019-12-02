@@ -1,15 +1,15 @@
 import React from "react";
-import { Categories, Questions, Question } from "./types";
 import CategoryList from "./components/CategoryList";
 import QuestionsTable from "./components/QuestionsTable";
 import QuestionComp from "./components/Question";
 import { emptyCategoryArray, initialQuestions, initialQuestion } from "./App";
+import { APICategories, APIQuestions, APIQuestion } from "./APITypes";
 
 interface QuizEngineProps {
-  categories: Categories;
-  questions: Questions;
-  selectedQuestion: Question;
-  initialQuestions: Questions;
+  categories: APICategories;
+  questions: APIQuestions;
+  selectedQuestion: APIQuestion;
+  initialQuestions: APIQuestions;
   onRowClick: Function;
   onListClick: Function;
 }

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
-import { Categories, Questions, Question } from "./types";
 import QuizEngine from "./QuizEngine";
+import { APICategories, APIQuestions, APIQuestion } from "./APITypes";
 
-export const emptyCategoryArray = {} as Categories;
-export const initialQuestions = {} as Questions;
-export const initialQuestion = {} as Question;
+export const emptyCategoryArray = {} as APICategories;
+export const initialQuestions = {} as APIQuestions;
+export const initialQuestion = {} as APIQuestion;
 
 const App: React.FC = () => {
   const [categories, setCategories] = useState(emptyCategoryArray);

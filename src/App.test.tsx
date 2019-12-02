@@ -4,9 +4,9 @@ import App from "./App";
 import renderer from "react-test-renderer";
 import CategoryList from "./components/CategoryList";
 import QuestionsTable from "./components/QuestionsTable";
-import { Categories, Question } from "./types";
+import { APICategories, APIQuestion } from "./APITypes";
 
-const cat: Categories = {
+const cat: APICategories = {
   trivia_categories: [
     {
       id: 343,
@@ -25,7 +25,7 @@ it("Category List renders correctly", () => {
   expect(tree).toMatchSnapshot();
 });
 
-const exampleResults: Question[] = [
+const exampleResults: APIQuestion[] = [
   {
     category: "Entertainment: Video Games",
     type: "multiple",

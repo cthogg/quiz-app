@@ -1,8 +1,8 @@
 import React from "react";
 import he from "he";
-import { Question } from "../types";
 import _ from "lodash";
-const QuestionComp: React.FC<{ question: Question }> = ({ question }) => {
+import { APIQuestion } from "../APITypes";
+const QuestionComp: React.FC<{ question: APIQuestion }> = ({ question }) => {
   const incorrectAnswers = question.incorrect_answers.map(a => ({
     answer: a,
     isCorrect: false

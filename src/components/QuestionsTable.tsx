@@ -1,9 +1,9 @@
 import React from "react";
 import he from "he";
-import { Questions } from "../types";
+import { APIQuestions } from "../APITypes";
 
 const QuestionsTable: React.FC<{
-  questions: Questions;
+  questions: APIQuestions;
   onRowClick: Function;
 }> = ({ questions, onRowClick }) => {
   return (
