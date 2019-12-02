@@ -20,50 +20,91 @@ Array [
 ]
 `;
 
-exports[`Questions Table Renders Correctly 1`] = `
-<table>
-  <thead>
-    <tr>
-      <th>
-         Question
-      </th>
-      <th>
-         Category
-      </th>
-      <th>
-         Difficulty
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr
-      onClick={[Function]}
+exports[`Question Engine Renders Correctly 1`] = `
+Array [
+  <label
+    htmlFor="pet-select"
+  >
+    Choose a Category
+  </label>,
+  <select
+    id="pet-select"
+    onChange={[Function]}
+  >
+    <option
+      value={1}
     >
-      <td>
-        In the Super Mario Bros. Series, what is Yoshi's scientific name?
-      </td>
-      <td>
-        Entertainment: Video Games
-      </td>
-      <td>
-        hard
-      </td>
-    </tr>
-    <tr
-      onClick={[Function]}
-    >
-      <td>
-        Which of his six wives was Henry VIII married to the longest?
-      </td>
-      <td>
-        History
-      </td>
-      <td>
-        medium
-      </td>
-    </tr>
-  </tbody>
-</table>
+      sport
+    </option>
+  </select>,
+  <p>
+     
+    In the Super Mario Bros. Series, what is Yoshi's scientific name?
+     
+  </p>,
+  <ul>
+    <em>
+       
+      <li>
+         
+        T. Yoshisaur Munchakoopas
+         
+      </li>
+       
+    </em>
+    <li>
+       
+      Yoshi
+       
+    </li>
+    <li>
+       
+      T. Yoshisotop Munchakoopas
+       
+    </li>
+    <li>
+       
+      Yossy
+       
+    </li>
+    <li>
+       
+      Anne Boleyn
+       
+    </li>
+  </ul>,
+  <p>
+     
+    Which of his six wives was Henry VIII married to the longest?
+     
+  </p>,
+  <ul>
+    <em>
+       
+      <li>
+         
+        Catherine of Aragon
+         
+      </li>
+       
+    </em>
+    <li>
+       
+      Jane Seymour
+       
+    </li>
+    <li>
+       
+      Anne Boleyn
+       
+    </li>
+    <li>
+       
+      Catherin Parr
+       
+    </li>
+  </ul>,
+]
 `;
 
 exports[`renders correctly 1`] = `

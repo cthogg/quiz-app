@@ -17,7 +17,6 @@ const App: React.FC = () => {
   const [categories, setCategories] = useState(emptyCategoryArray);
   const [selectedCategoryId, setSelectedCategoryId] = useState(-1);
   const [questions, setQuestions] = useState(initialQuestions);
-  const [selectedQuestion, setSelectedQuestion] = useState(initialQuestion);
   const [isLoading, setIsLoading] = useState(false);
 
   const CATEGORY_URL = `https://opentdb.com/api_category.php`;
@@ -60,12 +59,9 @@ const App: React.FC = () => {
       {isLoading && <p> loading</p>}
       {!isLoading && (
         <QuizEngine
-          onRowClick={setSelectedQuestion}
           onListClick={setSelectedCategoryId}
           categories={categories}
-          selectedQuestion={selectedQuestion}
           questions={questions}
-          initialQuestions={initialQuestions}
         >
           {" "}
         </QuizEngine>

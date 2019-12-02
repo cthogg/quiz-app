@@ -3,8 +3,9 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import renderer from "react-test-renderer";
 import CategoryList from "./components/CategoryList";
-import QuestionsTable from "./components/QuestionsTable";
 import { Question, Category } from "./frontendTypes";
+import QuizEngine from "./QuizEngine";
+const lodash = require.requireActual("lodash");
 
 const cat: Category[] = [
   {
@@ -45,18 +46,22 @@ const exampleResults: Question[] = [
       { answer: "Catherine of Aragon", isCorrect: true },
       { answer: "Jane Seymour", isCorrect: false },
       { answer: "Anne Boleyn", isCorrect: false },
-      { answer: "Catherin Parr", isCorrect: false },
-      { answer: "Anne Boleyn", isCorrect: false }
+      { answer: "Catherin Parr", isCorrect: false }
     ]
   }
 ];
 
-it("Questions Table Renders Correctly", () => {
+it("Question Engine Renders Correctly", () => {
+  lodash.shuffle = jest.fn(arr => arr);
   const tree = renderer
     .create(
-      <QuestionsTable onRowClick={() => null} questions={exampleResults}>
+      <QuizEngine
+        categories={[{ id: 1, name: "sport" }]}
+        onListClick={() => null}
+        questions={exampleResults}
+      >
         {" "}
-      </QuestionsTable>
+      </QuizEngine>
     )
     .toJSON();
   expect(tree).toMatchSnapshot();
