@@ -13,11 +13,17 @@ const App: React.FC = () => {
   const [selectedCategoryId, setSelectedCategoryId] = useState(-1);
   const [questions, setQuestions] = useState(initialQuestions);
   const [selectedQuestion, setSelectedQuestion] = useState(initialQuestion);
+  const [isLoading, setIsLoading] = useState(false);
 
+  const CATEGORY_URL = `https://opentdb.com/api_category.php`;
+  const QUESTION_URL = `https://opentdb.com/api.php?amount=10`;
+  const QUESTION_URL_CATEGORY = `https://opentdb.com/api.php?amount=10&category=${selectedCategoryId}`;
   useEffect(() => {
     const fetchCategories = async () => {
-      const result = await axios(`https://opentdb.com/api_category.php`);
+      setIsLoading(true);
+      const result = await axios(CATEGORY_URL);
       setCategories(result.data);
+      setIsLoading(false);
     };
     fetchCategories();
   }, []);
@@ -25,18 +31,20 @@ const App: React.FC = () => {
   useEffect(() => {
     if (selectedCategoryId === -1) {
       const fetchData = async () => {
-        const result = await axios(`https://opentdb.com/api.php?amount=10`);
+        setIsLoading(true);
+        const result = await axios(QUESTION_URL);
         setQuestions(result.data);
+        setIsLoading(false);
       };
       fetchData();
     }
 
     if (selectedCategoryId !== -1) {
       const fetchData = async () => {
-        const result = await axios(
-          `https://opentdb.com/api.php?amount=10&category=${selectedCategoryId}`
-        );
+        setIsLoading(true);
+        const result = await axios(QUESTION_URL_CATEGORY);
         setQuestions(result.data);
+        setIsLoading(false);
       };
       fetchData();
     }
@@ -44,16 +52,19 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      <QuizEngine
-        onRowClick={setSelectedQuestion}
-        onListClick={setSelectedCategoryId}
-        categories={categories}
-        selectedQuestion={selectedQuestion}
-        questions={questions}
-        initialQuestions={initialQuestions}
-      >
-        {" "}
-      </QuizEngine>
+      {isLoading && <p> loading</p>}
+      {!isLoading && (
+        <QuizEngine
+          onRowClick={setSelectedQuestion}
+          onListClick={setSelectedCategoryId}
+          categories={categories}
+          selectedQuestion={selectedQuestion}
+          questions={questions}
+          initialQuestions={initialQuestions}
+        >
+          {" "}
+        </QuizEngine>
+      )}
     </div>
   );
 };
