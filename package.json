@@ -22,7 +22,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "test:ci": "CI=true react-scripts test --colors"
+    "test:ci": "CI=true react-scripts test --colors",
+    "ci:pipeline": "yarn test:ci && yarn build"
   },
   "husky": {
     "hooks": {

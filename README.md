@@ -19,4 +19,5 @@
 - Write tests in React Testing Library and Cypress.
 - Randomise the answers (at the moment the correct answer is always highlighted) 
 - Change the favicon and page title
-- adding eslint and prettier.
+- adding eslint and prettier.7
+- add a better ci client for example Circle CI. At the moment it uses the netlify command yarn test:ci && yarn build
