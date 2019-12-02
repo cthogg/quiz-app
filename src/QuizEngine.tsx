@@ -21,9 +21,13 @@ const QuizEngine: React.FunctionComponent<QuizEngineProps> = ({
           {" "}
         </CategoryList>
       )}
-      {questions.map((question, index) => (
-        <QuestionComp key={index} question={question} />
-      ))}
+      <div className="columns">
+        <div className="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
+          {questions.map((question, index) => (
+            <QuestionComp key={index} question={question} />
+          ))}
+        </div>
+      </div>
     </React.Fragment>
   );
 };

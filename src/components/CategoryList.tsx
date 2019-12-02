@@ -11,12 +11,14 @@ const CategoryList: React.FC<{
     </option>
   ));
   return (
-    <React.Fragment>
-      <label htmlFor="pet-select">Choose a Category</label>
-      <select id="pet-select" onChange={e => change(e.target.value)}>
-        {listItems}
-      </select>
-    </React.Fragment>
+    <section className="section">
+      <React.Fragment>
+        <label htmlFor="pet-select">Choose a Category</label>
+        <select id="pet-select" onChange={e => change(e.target.value)}>
+          {listItems}
+        </select>
+      </React.Fragment>
+    </section>
   );
 };
 

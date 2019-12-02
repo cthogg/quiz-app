@@ -1,12 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Category List renders correctly 1`] = `
-Array [
+<section
+  className="section"
+>
   <label
     htmlFor="pet-select"
   >
     Choose a Category
-  </label>,
+  </label>
   <select
     id="pet-select"
     onChange={[Function]}
@@ -16,99 +18,151 @@ Array [
     >
       bob
     </option>
-  </select>,
-]
+  </select>
+</section>
 `;
 
 exports[`Question Engine Renders Correctly 1`] = `
 Array [
-  <label
-    htmlFor="pet-select"
+  <section
+    className="section"
   >
-    Choose a Category
-  </label>,
-  <select
-    id="pet-select"
-    onChange={[Function]}
-  >
-    <option
-      value={1}
+    <label
+      htmlFor="pet-select"
     >
-      sport
-    </option>
-  </select>,
-  <p>
-     
-    In the Super Mario Bros. Series, what is Yoshi's scientific name?
-     
-  </p>,
-  <ul>
-    <em>
-       
-      <li>
-         
-        T. Yoshisaur Munchakoopas
-         
-      </li>
-       
-    </em>
-    <li>
-       
-      Yoshi
-       
-    </li>
-    <li>
-       
-      T. Yoshisotop Munchakoopas
-       
-    </li>
-    <li>
-       
-      Yossy
-       
-    </li>
-    <li>
-       
-      Anne Boleyn
-       
-    </li>
-  </ul>,
-  <p>
-     
-    Which of his six wives was Henry VIII married to the longest?
-     
-  </p>,
-  <ul>
-    <em>
-       
-      <li>
-         
-        Catherine of Aragon
-         
-      </li>
-       
-    </em>
-    <li>
-       
-      Jane Seymour
-       
-    </li>
-    <li>
-       
-      Anne Boleyn
-       
-    </li>
-    <li>
-       
-      Catherin Parr
-       
-    </li>
-  </ul>,
+      Choose a Category
+    </label>
+    <select
+      id="pet-select"
+      onChange={[Function]}
+    >
+      <option
+        value={1}
+      >
+        sport
+      </option>
+    </select>
+  </section>,
+  <div
+    className="columns"
+  >
+    <div
+      className="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd"
+    >
+      <section
+        className="section"
+      >
+        <div
+          className="card"
+        >
+          <div
+            className="card-content"
+          >
+            <div
+              className="content"
+            >
+              <p>
+                 
+                In the Super Mario Bros. Series, what is Yoshi's scientific name?
+                 
+              </p>
+              <ul>
+                <em>
+                   
+                  <li>
+                     
+                    T. Yoshisaur Munchakoopas
+                     
+                  </li>
+                   
+                </em>
+                <li>
+                   
+                  Yoshi
+                   
+                </li>
+                <li>
+                   
+                  T. Yoshisotop Munchakoopas
+                   
+                </li>
+                <li>
+                   
+                  Yossy
+                   
+                </li>
+                <li>
+                   
+                  Anne Boleyn
+                   
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        className="section"
+      >
+        <div
+          className="card"
+        >
+          <div
+            className="card-content"
+          >
+            <div
+              className="content"
+            >
+              <p>
+                 
+                Which of his six wives was Henry VIII married to the longest?
+                 
+              </p>
+              <ul>
+                <em>
+                   
+                  <li>
+                     
+                    Catherine of Aragon
+                     
+                  </li>
+                   
+                </em>
+                <li>
+                   
+                  Jane Seymour
+                   
+                </li>
+                <li>
+                   
+                  Anne Boleyn
+                   
+                </li>
+                <li>
+                   
+                  Catherin Parr
+                   
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>,
 ]
 `;
 
 exports[`renders correctly 1`] = `
 <div
   className="App"
-/>
+>
+  <div
+    className="columns"
+  >
+    <div
+      className="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd"
+    />
+  </div>
+</div>
 `;

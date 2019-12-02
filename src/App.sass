@@ -3,7 +3,8 @@
 // Import a Google Font
 @import url('https://fonts.googleapis.com/css?family=Sniglet&display=swap');
 // Set your brand colors
-$orange: #ffffff;
+$orange: #FFE0B3;
+$light-orange: #FFEDD3;
 $dark-blue: #212A51
 // Update Bulma's global variables
 $family-sans-serif: 'Sniglet', cursive;
@@ -11,9 +12,11 @@ $text: $dark-blue;
 $widescreen-enabled: false;
 $fullhd-enabled: false;
 $size-6: 10rem
+$column-gap: 1rem
 
 // Update some of Bulma's component variables
 $body-background-color: $orange;
+$card-background-color: $light-orange;
 $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
@@ -29,3 +32,4 @@ $input-shadow: none;
 @import '../node_modules/bulma/sass/components/navbar.sass';
 @import '../node_modules/bulma/sass/layout/hero.sass';
 @import '../node_modules/bulma/sass/layout/section.sass';
+@import '../node_modules/bulma/sass/components/card.sass';
