@@ -4,7 +4,8 @@ import { Category } from "../frontendTypes";
 const CategoryList: React.FC<{
   categories: Category[];
   change: Function;
-}> = ({ categories, change }) => {
+  selectedCategoryId: number;
+}> = ({ categories, change, selectedCategoryId }) => {
   const listItems = categories.map((category: Category) => (
     <option key={category.id} value={category.id}>
       {category.name}
@@ -14,7 +15,11 @@ const CategoryList: React.FC<{
     <section className="section">
       <React.Fragment>
         <label htmlFor="pet-select">Choose a Category</label>
-        <select id="pet-select" onChange={e => change(e.target.value)}>
+        <select
+          value={selectedCategoryId}
+          id="pet-select"
+          onChange={e => change(e.target.value)}
+        >
           {listItems}
         </select>
       </React.Fragment>

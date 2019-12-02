@@ -30,7 +30,7 @@ const App: React.FC = () => {
       setIsLoading(false);
     };
     fetchCategories();
-  }, []);
+  }, [selectedCategoryId]);
 
   useEffect(() => {
     if (selectedCategoryId === -1) {
@@ -60,6 +60,7 @@ const App: React.FC = () => {
       {!isLoading && (
         <QuizEngine
           onListClick={setSelectedCategoryId}
+          selectedCategoryId={selectedCategoryId}
           categories={categories}
           questions={questions}
         >

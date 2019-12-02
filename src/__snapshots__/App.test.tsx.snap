@@ -24,6 +24,11 @@ exports[`Category List renders correctly 1`] = `
 
 exports[`Question Engine Renders Correctly 1`] = `
 Array [
+  <p
+    className="is-size-2"
+  >
+     Quiz Master 
+  </p>,
   <section
     className="section"
   >
@@ -157,6 +162,11 @@ exports[`renders correctly 1`] = `
 <div
   className="App"
 >
+  <p
+    className="is-size-2"
+  >
+     Quiz Master 
+  </p>
   <div
     className="columns"
   >

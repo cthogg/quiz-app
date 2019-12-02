@@ -8,16 +8,23 @@ interface QuizEngineProps {
   categories: Category[];
   questions: Question[];
   onListClick: Function;
+  selectedCategoryId: number;
 }
 const QuizEngine: React.FunctionComponent<QuizEngineProps> = ({
   categories,
   questions,
-  onListClick
+  onListClick,
+  selectedCategoryId
 }: QuizEngineProps): JSX.Element => {
   return (
     <React.Fragment>
+      <p className="is-size-2"> Quiz Master </p>
       {categories !== emptyCategoryArray && (
-        <CategoryList categories={categories} change={onListClick}>
+        <CategoryList
+          selectedCategoryId={selectedCategoryId}
+          categories={categories}
+          change={onListClick}
+        >
           {" "}
         </CategoryList>
       )}
