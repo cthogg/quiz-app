@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'; import './App.css';
 import axios from 'axios';
-var he = require('he');
+import  CategoryList  from './components/CategoryList';
+import QuestionComp from './components/Question';
+import QuestionsTable from './components/QuestionsTable';
 
 export interface Category {
   id: number,
@@ -24,72 +26,6 @@ export interface Questions {
 
 export interface Categories {
   "trivia_categories": Array<Category>
-}
-
-
-export const CategoryList: React.FC<{ categories: Categories, change: Function }> = ({ categories, change }) => {
-  const triviaCategories = categories.trivia_categories
-  const listItems = triviaCategories.map((category: Category) =>
-    <option key={category.id} value={category.id}>{category.name}</option>
-  );
-  return (
-    <React.Fragment>
-      <label htmlFor="pet-select">Choose a Category</label>
-      <select id="pet-select" onChange={e => change(e.target.value)} >
-        {listItems}
-      </select>
-    </React.Fragment>
-  );
-}
-
-export const Question: React.FC<{ question: Question }> = ({ question }) => {
-  return (
-    <React.Fragment>
-      {question.correct_answer !== undefined &&
-        <React.Fragment>
-
-          <p> {he.decode(question.question)} </p>
-          <ul>
-            <li>  <em> {question.correct_answer} </em> </li>
-            {question.incorrect_answers.map((question, index) =>
-              <li key={index}> {question} </li>
-            )}
-          </ul>
-        </React.Fragment>
-
-      }
-
-    </React.Fragment>
-  );
-}
-
-export const QuestionsTable: React.FC<{ questions: Questions, onRowClick: Function }> = ({ questions, onRowClick }) => {
-  return (
-    <React.Fragment>
-      <table>
-        <thead>
-          <tr>
-            <th> Question</th>
-            <th> Category</th>
-            <th> Difficulty</th>
-
-          </tr>
-        </thead>
-        <tbody>
-          {questions.results &&
-            questions.results.map((question, index) =>
-              <tr key={index} onClick={() => onRowClick(question)}>
-                <td>{he.decode(question.question)}</td>
-                <td>{question.category}</td>
-                <td>{question.difficulty}</td>
-              </tr>
-            )}
-
-        </tbody>
-      </table>
-
-    </React.Fragment>
-  );
 }
 
 const App: React.FC = () => {
@@ -144,7 +80,7 @@ const App: React.FC = () => {
           <QuestionsTable onRowClick={setSelectedQuestion} questions={questions}> </QuestionsTable>
         }
         {selectedQuestion !== initialQuestion &&
-          <Question question={selectedQuestion} />
+          <QuestionComp question={selectedQuestion} />
 
         }
       </React.Fragment>
