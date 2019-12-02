@@ -25,3 +25,4 @@
 - add a better ci client for example Circle CI. At the moment it uses the netlify command yarn test:ci && yarn build
 - accessibility
 - lighthouse score.
+- look at bug in incorrect_answers.map JoJo&#039;s Bizarre Adventure 
