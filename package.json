@@ -11,12 +11,20 @@
     "@types/react-test-renderer": "^16.8.2",
     "axios": "^0.18.0",
     "he": "^1.2.0",
+    "lint-staged": "^9.5.0",
+    "prettier": "^1.19.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.0",
     "react-test-renderer": "^16.8.6",
     "typescript": "3.4.5"
   },
+  "lint-staged": {
+      "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+         "prettier --write",
+         "git add"
+       ]
+  },    
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -27,7 +35,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn test:ci",
+      "pre-commit": "lint-staged && yarn test:ci",
       "pre-push": "yarn test:ci"
     }
   },
