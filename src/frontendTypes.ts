@@ -12,8 +12,25 @@ export interface Question {
   answers: Answer[];
 }
 
-const convertBackendQuestionsToFrontendQuestions = (
+const convertBackedAnswersToFrontendAnswers = (
+  backendAnswers: string[],
+  isCorrect = false
+): Answer[] => {
+  return backendAnswers.map(answer => ({
+    answer: answer,
+    isCorrect: isCorrect
+  }));
+};
+
+export const convertBackendQuestionsToFrontendQuestions = (
   questions: APIQuestions
-) => {
-  return true;
+): Question[] => {
+  return questions.results.map(question => ({
+    question: question.question,
+    category: question.category,
+    difficulty: question.difficulty,
+    answers: convertBackedAnswersToFrontendAnswers(
+      question.incorrect_answers
+    ).concat(convertBackedAnswersToFrontendAnswers([question.correct_answer]))
+  }));
 };
