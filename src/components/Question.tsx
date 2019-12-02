@@ -1,6 +1,6 @@
 import React from 'react'
 import he from 'he'
-import { Question } from '../App';
+import {Question } from '../types';
 
 const QuestionComp: React.FC<{ question: Question }> = ({ question }) => {
     return (

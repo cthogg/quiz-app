@@ -3,30 +3,7 @@ import axios from 'axios';
 import  CategoryList  from './components/CategoryList';
 import QuestionComp from './components/Question';
 import QuestionsTable from './components/QuestionsTable';
-
-export interface Category {
-  id: number,
-  name: string
-}
-
-export interface Question {
-  "category": string,
-  "type": string,
-  "difficulty": string,
-  "question": string
-  "correct_answer": string
-  "incorrect_answers": Array<string>
-}
-
-export interface Questions {
-  "response_code": number,
-  "results": Array<Question>
-}
-
-
-export interface Categories {
-  "trivia_categories": Array<Category>
-}
+import { Categories, Questions, Question } from './types';
 
 const App: React.FC = () => {
   const emptyCategoryArray = {} as Categories

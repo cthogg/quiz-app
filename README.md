@@ -23,3 +23,5 @@
 - Change the favicon and page title
 - adding eslint and prettier.7
 - add a better ci client for example Circle CI. At the moment it uses the netlify command yarn test:ci && yarn build
+- accessibility
+- lighthouse score.

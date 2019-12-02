@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App, { Categories, Question } from './App';
+import App from './App';
 import renderer from 'react-test-renderer';
 import CategoryList  from './components/CategoryList';
 import QuestionsTable from './components/QuestionsTable';
+import { Categories, Question } from './types';
 
 const cat: Categories = {
   trivia_categories: [{

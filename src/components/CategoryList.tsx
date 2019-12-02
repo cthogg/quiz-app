@@ -1,5 +1,5 @@
 import React from 'react'
-import { Categories, Category } from '../App';
+import { Categories, Category } from '../types';
 
 const CategoryList: React.FC<{ categories: Categories, change: Function }> = ({ categories, change }) => {
     const triviaCategories = categories.trivia_categories

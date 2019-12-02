@@ -1,6 +1,7 @@
 import React from 'react'
-import { Questions } from '../App';
 import he from 'he'
+import { Questions } from '../types';
+
 
 const QuestionsTable: React.FC<{ questions: Questions, onRowClick: Function }> = ({ questions, onRowClick }) => {
     return (
