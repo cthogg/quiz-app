@@ -18,7 +18,7 @@ const QuizEngine: React.FunctionComponent<QuizEngineProps> = ({
 }: QuizEngineProps): JSX.Element => {
   return (
     <React.Fragment>
-      <p className="is-size-2"> Quiz Master </p>
+      <p className="is-size-2"> Quiz Pro </p>
       {categories !== emptyCategoryArray && (
         <CategoryList
           selectedCategoryId={selectedCategoryId}

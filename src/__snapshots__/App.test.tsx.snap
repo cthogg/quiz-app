@@ -28,7 +28,7 @@ Array [
   <p
     className="is-size-2"
   >
-     Quiz Master 
+     Quiz Pro 
   </p>,
   <section
     className="section"
@@ -167,7 +167,7 @@ exports[`renders correctly 1`] = `
   <p
     className="is-size-2"
   >
-     Quiz Master 
+     Quiz Pro 
   </p>
   <div
     className="columns"
