@@ -2,24 +2,34 @@ import React from "react";
 import he from "he";
 import { Question, Answer } from "../frontendTypes";
 import _ from "lodash";
-const QuestionComp: React.FC<{ question: Question }> = ({ question }) => {
+const QuestionComp: React.FC<{
+  question: Question;
+  questionNumber: number;
+}> = ({ question, questionNumber }) => {
+  const letterArray: string[] = "ABCDEFGHIJKL".split("");
   return (
     <section className="section">
       <div className="card">
         {question !== undefined && (
           <div className="card-content">
             <div className="content">
-              <p> {he.decode(question.question)} </p>
+              <p>
+                {" "}
+                {questionNumber}.&nbsp;{he.decode(question.question)}{" "}
+              </p>
               <ul>
                 {_.shuffle(question.answers).map(
                   (answer: Answer, index: number) => {
                     return answer.isCorrect ? (
-                      <em key={index}>
+                      <li key={index}>
                         {" "}
-                        <li> {answer.answer} </li>{" "}
-                      </em>
+                        {letterArray[index]} <em> {answer.answer} </em>{" "}
+                      </li>
                     ) : (
-                      <li key={index}> {answer.answer} </li>
+                      <li key={index}>
+                        {" "}
+                        {letterArray[index]} {answer.answer}{" "}
+                      </li>
                     );
                   }
                 )}
