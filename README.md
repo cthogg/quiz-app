@@ -39,4 +39,3 @@ An app to help quiz masters generate a quiz which they can read aloud to their f
 
 ## TODO
 - change the padding and margins
-- remove console errors.

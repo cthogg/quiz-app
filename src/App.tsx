@@ -19,10 +19,9 @@ const App: React.FC = () => {
   const [questions, setQuestions] = useState(initialQuestions);
   const [isLoading, setIsLoading] = useState(false);
 
-  const CATEGORY_URL = `https://opentdb.com/api_category.php`;
-  const QUESTION_URL = `https://opentdb.com/api.php?amount=10`;
-  const QUESTION_URL_CATEGORY = `https://opentdb.com/api.php?amount=10&category=${selectedCategoryId}`;
   useEffect(() => {
+    const CATEGORY_URL = `https://opentdb.com/api_category.php`;
+
     const fetchCategories = async () => {
       setIsLoading(true);
       const result = await axios(CATEGORY_URL);
@@ -33,6 +32,8 @@ const App: React.FC = () => {
   }, [selectedCategoryId]);
 
   useEffect(() => {
+    const QUESTION_URL = `https://opentdb.com/api.php?amount=10`;
+    const QUESTION_URL_CATEGORY = `https://opentdb.com/api.php?amount=10&category=${selectedCategoryId}`;
     if (selectedCategoryId === -1) {
       const fetchData = async () => {
         setIsLoading(true);
