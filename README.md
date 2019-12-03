@@ -1,5 +1,8 @@
-# Quizpro App
-- An app to help quiz masters generate a quiz which they can read aloud to their friends or family.
+# Quizpro
+
+https://quizpro.netlify.com/
+
+An app to help quiz masters generate a quiz which they can read aloud to their friends or family.
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/53180c2e-e4d9-4657-8e3d-f2c69fb38016/deploy-status)](https://app.netlify.com/sites/mystifying-roentgen-274bc4/deploys)
 
