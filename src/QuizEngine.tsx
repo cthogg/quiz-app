@@ -31,7 +31,7 @@ const QuizEngine: React.FunctionComponent<QuizEngineProps> = ({
         />
       )}
       <div className="columns">
-        <div className="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
+        <div className="column is-four-fifths-mobile is-four-fifths-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
           {isLoading && <section className="section"> loading</section>}
           {!isLoading && (
             <span>

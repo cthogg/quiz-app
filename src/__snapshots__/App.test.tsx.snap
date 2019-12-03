@@ -58,7 +58,7 @@ Array [
     className="columns"
   >
     <div
-      className="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd"
+      className="column is-four-fifths-mobile is-four-fifths-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd"
     >
       <span>
         <section
@@ -206,7 +206,7 @@ exports[`renders correctly 1`] = `
     className="columns"
   >
     <div
-      className="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd"
+      className="column is-four-fifths-mobile is-four-fifths-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd"
     >
       <span>
          

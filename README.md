@@ -28,14 +28,10 @@ An app to help quiz masters generate a quiz which they can read aloud to their f
 - Design mocks: Use Figma to draft out some ideas and give me something to work towards on the design. The simple mock developed [here](https://www.figma.com/file/WXZ09qKPbKVMOjBgP7JXHp/Quiz-Master?node-id=0%3A1) took me 10 minutes to create. 
 - Documentation: If I had more time I would add some architectural decision records within the repository. ADRs. To save you looking back and asking, why do we use this library? Why was it made like this? It often forces us to take some time at least on a decision and recognising other ways.
 
-## If I had more time
-- Graceful degredation: show error if no response.
-- accessibility checks with WHAT Chrome extension and add the required headers. 
-- lighthouse score.
+## TODO
 - add a better ci client for example Circle CI. At the moment it uses the command `ci:pipeline` which runs linting, typescript and unit tests before building the site.
 - Add Storybook. This ensures that components are kept small.
 - Write end to end tests using Cypress.
-
-
-## TODO
-- change the padding and margins
+- Graceful degredation: show error if no response.
+- accessibility checks with Axe Chrome extension and adding the required headers. 
+- lighthouse score.
