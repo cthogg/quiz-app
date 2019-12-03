@@ -56,17 +56,13 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      {isLoading && <p> loading</p>}
-      {!isLoading && (
-        <QuizEngine
-          onListClick={setSelectedCategoryId}
-          selectedCategoryId={selectedCategoryId}
-          categories={categories}
-          questions={questions}
-        >
-          {" "}
-        </QuizEngine>
-      )}
+      <QuizEngine
+        onListClick={setSelectedCategoryId}
+        selectedCategoryId={selectedCategoryId}
+        categories={categories}
+        questions={questions}
+        isLoading={isLoading}
+      />
     </div>
   );
 };

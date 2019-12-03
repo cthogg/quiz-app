@@ -38,7 +38,6 @@ An app to help quiz masters generate a quiz which they can read aloud to their f
 
 
 ## TODO
+- change the padding and margins
 - Change the favicon and page title
-- Show better loading spinner to not obscure the page title
-- add question numbers and answer letters (A,B,C,D)
 - remove console errors.

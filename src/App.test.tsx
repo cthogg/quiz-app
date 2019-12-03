@@ -56,6 +56,7 @@ it("Question Engine Renders Correctly", () => {
   const tree = renderer
     .create(
       <QuizEngine
+        isLoading={false}
         selectedCategoryId={1}
         categories={[{ id: 1, name: "sport" }]}
         onListClick={() => null}

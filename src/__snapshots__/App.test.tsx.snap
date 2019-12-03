@@ -25,11 +25,15 @@ exports[`Category List renders correctly 1`] = `
 
 exports[`Question Engine Renders Correctly 1`] = `
 Array [
-  <p
-    className="is-size-2"
+  <section
+    className="section"
   >
-     Quiz Pro 
-  </p>,
+    <p
+      className="is-size-2"
+    >
+       Quiz Pro 
+    </p>
+  </section>,
   <section
     className="section"
   >
@@ -56,127 +60,130 @@ Array [
     <div
       className="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd"
     >
-      <section
-        className="section"
-      >
-        <div
-          className="card"
+      <span>
+        <section
+          className="section"
         >
           <div
-            className="card-content"
+            className="card"
           >
             <div
-              className="content"
+              className="card-content"
             >
-              <p>
-                 
-                1
-                . 
-                In the Super Mario Bros. Series, what is Yoshi's scientific name?
-                 
-              </p>
-              <ul>
-                <li>
+              <div
+                className="content"
+              >
+                <p>
                    
-                  A
+                  1
+                  . 
+                  In the Super Mario Bros. Series, what is Yoshi's scientific name?
                    
-                  <em>
+                </p>
+                <ul>
+                  <li>
                      
-                    T. Yoshisaur Munchakoopas
+                    A
                      
-                  </em>
-                   
-                </li>
-                <li>
-                   
-                  B
-                   
-                  Yoshi
-                   
-                </li>
-                <li>
-                   
-                  C
-                   
-                  T. Yoshisotop Munchakoopas
-                   
-                </li>
-                <li>
-                   
-                  D
-                   
-                  Yossy
-                   
-                </li>
-                <li>
-                   
-                  E
-                   
-                  Anne Boleyn
-                   
-                </li>
-              </ul>
+                    <em>
+                       
+                      T. Yoshisaur Munchakoopas
+                       
+                    </em>
+                     
+                  </li>
+                  <li>
+                     
+                    B
+                     
+                    Yoshi
+                     
+                  </li>
+                  <li>
+                     
+                    C
+                     
+                    T. Yoshisotop Munchakoopas
+                     
+                  </li>
+                  <li>
+                     
+                    D
+                     
+                    Yossy
+                     
+                  </li>
+                  <li>
+                     
+                    E
+                     
+                    Anne Boleyn
+                     
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-      <section
-        className="section"
-      >
-        <div
-          className="card"
+        </section>
+        <section
+          className="section"
         >
           <div
-            className="card-content"
+            className="card"
           >
             <div
-              className="content"
+              className="card-content"
             >
-              <p>
-                 
-                2
-                . 
-                Which of his six wives was Henry VIII married to the longest?
-                 
-              </p>
-              <ul>
-                <li>
+              <div
+                className="content"
+              >
+                <p>
                    
-                  A
+                  2
+                  . 
+                  Which of his six wives was Henry VIII married to the longest?
                    
-                  <em>
+                </p>
+                <ul>
+                  <li>
                      
-                    Catherine of Aragon
+                    A
                      
-                  </em>
-                   
-                </li>
-                <li>
-                   
-                  B
-                   
-                  Jane Seymour
-                   
-                </li>
-                <li>
-                   
-                  C
-                   
-                  Anne Boleyn
-                   
-                </li>
-                <li>
-                   
-                  D
-                   
-                  Catherin Parr
-                   
-                </li>
-              </ul>
+                    <em>
+                       
+                      Catherine of Aragon
+                       
+                    </em>
+                     
+                  </li>
+                  <li>
+                     
+                    B
+                     
+                    Jane Seymour
+                     
+                  </li>
+                  <li>
+                     
+                    C
+                     
+                    Anne Boleyn
+                     
+                  </li>
+                  <li>
+                     
+                    D
+                     
+                    Catherin Parr
+                     
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+         
+      </span>
     </div>
   </div>,
 ]
@@ -186,17 +193,25 @@ exports[`renders correctly 1`] = `
 <div
   className="App"
 >
-  <p
-    className="is-size-2"
+  <section
+    className="section"
   >
-     Quiz Pro 
-  </p>
+    <p
+      className="is-size-2"
+    >
+       Quiz Pro 
+    </p>
+  </section>
   <div
     className="columns"
   >
     <div
       className="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd"
-    />
+    >
+      <span>
+         
+      </span>
+    </div>
   </div>
 </div>
 `;
