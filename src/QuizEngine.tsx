@@ -30,21 +30,19 @@ const QuizEngine: React.FunctionComponent<QuizEngineProps> = ({
           change={onListClick}
         />
       )}
-      <div className="columns">
-        <div className="column is-four-fifths-mobile is-four-fifths-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
-          {isLoading && <section className="section"> loading</section>}
-          {!isLoading && (
-            <span>
-              {questions.map((question, index) => (
-                <QuestionComp
-                  key={index}
-                  question={question}
-                  questionNumber={index + 1}
-                />
-              ))}{" "}
-            </span>
-          )}
-        </div>
+      <div className="column">
+        {isLoading && <section className="section"> loading</section>}
+        {!isLoading && (
+          <span>
+            {questions.map((question, index) => (
+              <QuestionComp
+                key={index}
+                question={question}
+                questionNumber={index + 1}
+              />
+            ))}{" "}
+          </span>
+        )}
       </div>
     </React.Fragment>
   );

@@ -55,136 +55,132 @@ Array [
     </select>
   </section>,
   <div
-    className="columns"
+    className="column"
   >
-    <div
-      className="column is-four-fifths-mobile is-four-fifths-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd"
-    >
-      <span>
-        <section
-          className="section"
+    <span>
+      <section
+        className="section"
+      >
+        <div
+          className="card"
         >
           <div
-            className="card"
+            className="card-content"
           >
             <div
-              className="card-content"
+              className="content"
             >
-              <div
-                className="content"
-              >
-                <p>
+              <p>
+                 
+                1
+                . 
+                In the Super Mario Bros. Series, what is Yoshi's scientific name?
+                 
+              </p>
+              <ul>
+                <li>
                    
-                  1
-                  . 
-                  In the Super Mario Bros. Series, what is Yoshi's scientific name?
+                  A
                    
-                </p>
-                <ul>
-                  <li>
+                  <em>
                      
-                    A
+                    T. Yoshisaur Munchakoopas
                      
-                    <em>
-                       
-                      T. Yoshisaur Munchakoopas
-                       
-                    </em>
-                     
-                  </li>
-                  <li>
-                     
-                    B
-                     
-                    Yoshi
-                     
-                  </li>
-                  <li>
-                     
-                    C
-                     
-                    T. Yoshisotop Munchakoopas
-                     
-                  </li>
-                  <li>
-                     
-                    D
-                     
-                    Yossy
-                     
-                  </li>
-                  <li>
-                     
-                    E
-                     
-                    Anne Boleyn
-                     
-                  </li>
-                </ul>
-              </div>
+                  </em>
+                   
+                </li>
+                <li>
+                   
+                  B
+                   
+                  Yoshi
+                   
+                </li>
+                <li>
+                   
+                  C
+                   
+                  T. Yoshisotop Munchakoopas
+                   
+                </li>
+                <li>
+                   
+                  D
+                   
+                  Yossy
+                   
+                </li>
+                <li>
+                   
+                  E
+                   
+                  Anne Boleyn
+                   
+                </li>
+              </ul>
             </div>
           </div>
-        </section>
-        <section
-          className="section"
+        </div>
+      </section>
+      <section
+        className="section"
+      >
+        <div
+          className="card"
         >
           <div
-            className="card"
+            className="card-content"
           >
             <div
-              className="card-content"
+              className="content"
             >
-              <div
-                className="content"
-              >
-                <p>
+              <p>
+                 
+                2
+                . 
+                Which of his six wives was Henry VIII married to the longest?
+                 
+              </p>
+              <ul>
+                <li>
                    
-                  2
-                  . 
-                  Which of his six wives was Henry VIII married to the longest?
+                  A
                    
-                </p>
-                <ul>
-                  <li>
+                  <em>
                      
-                    A
+                    Catherine of Aragon
                      
-                    <em>
-                       
-                      Catherine of Aragon
-                       
-                    </em>
-                     
-                  </li>
-                  <li>
-                     
-                    B
-                     
-                    Jane Seymour
-                     
-                  </li>
-                  <li>
-                     
-                    C
-                     
-                    Anne Boleyn
-                     
-                  </li>
-                  <li>
-                     
-                    D
-                     
-                    Catherin Parr
-                     
-                  </li>
-                </ul>
-              </div>
+                  </em>
+                   
+                </li>
+                <li>
+                   
+                  B
+                   
+                  Jane Seymour
+                   
+                </li>
+                <li>
+                   
+                  C
+                   
+                  Anne Boleyn
+                   
+                </li>
+                <li>
+                   
+                  D
+                   
+                  Catherin Parr
+                   
+                </li>
+              </ul>
             </div>
           </div>
-        </section>
-         
-      </span>
-    </div>
+        </div>
+      </section>
+       
+    </span>
   </div>,
 ]
 `;
@@ -203,15 +199,11 @@ exports[`renders correctly 1`] = `
     </p>
   </section>
   <div
-    className="columns"
+    className="column"
   >
-    <div
-      className="column is-four-fifths-mobile is-four-fifths-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd"
-    >
-      <span>
-         
-      </span>
-    </div>
+    <span>
+       
+    </span>
   </div>
 </div>
 `;
