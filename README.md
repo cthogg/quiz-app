@@ -1,33 +1,41 @@
 # Quizmaster App
-- An app to help quizmasters generate a quiz.
+- An app to help quiz masters generate a quiz which they can read aloud to their friends or family.
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/53180c2e-e4d9-4657-8e3d-f2c69fb38016/deploy-status)](https://app.netlify.com/sites/mystifying-roentgen-274bc4/deploys)
+
+## Requirements
+- node (tested on version 8.15.1)
+- yarn (tested on version 1.13.0)
 
 ## Commands
 - install `yarn `
 - run `yarn start`
 
-## What it shows
-- Dropdown that enables a user to select a category. 
-- If the category is selected or changed fetch a number of questions from the API and display the following information in a table: the question itself, the category and the difficulty. 
-- A user should be able to select a question by clicking on it so he/she can see the entire questionand the associated answers.
-- I decided to use Typescript as a nice exercise for me.
+## User Stories
+- As a user, when I visit the page for the first time, then I can see a dropdown with a list of available categories.
+- As a user, when I visit the page for the first time, then I can see 10 questions from the general knowledge category, with possible answers and the correct answer of each question highlighted.
+- As a user when I click on the dropdown then I can see a list of available categories
+- As a user of when I click on a category then I can see 10 questions of that category, with the correct answer of each question highlighted.
+
+## Design Philosophy
+- Testing. I find snapshot testing and easy and quick way to spot visual regressions. Also code which is easy to test is often better designed code. So it adding tests raises the bar in coding standards. 
+- Automation: CI with Circle CI. Can spot regressions especially when working across the team. Husky: so you are not committing or pushing code which fails tests. Also with a VSCode Snippet. Prettier and eslint makes the sty consistent.
+- Easy to change. Based on a philosophy from the Pragmatic Programmer. Why, for example, I created a conversion layer between the backend and frontend types. 
+- Design System: It is good to develop and document a design system to ensure consistencies across teams. Since this project is a prototype I used Bulma CSS framework.
+- Design mocks: Use Figma to draft out some ideas and give me something to work towards on the design. The simple mock developed [here](https://www.figma.com/file/WXZ09qKPbKVMOjBgP7JXHp/Quiz-Master?node-id=0%3A1) took me 10 minutes to create. 
+- Documentation: If I had more time I would add some architectural decision records within the repository. ADRs. To save you looking back and asking, why do we use this library? Why was it made like this? It often forces us to take some time at least on a decision and recognising other ways.
 
 ## If I had more time
-- add eslint and typescript checks to ci. 
-- add backend sanitizer for better types.
-- Add 'any' to the choose a category dropdown and make this show at default.
-- Abbreviating any information that is too long. 
-- For this the question should be displayed on another page that shows the question and the possible answers with the correct answer being highlighted.
-- Splitting up the components into separate things. 
-- Improving the styles (e.g highlighted row, cusor to pointer on the table)
-- Decoding the question data from the api at source rather than at the end to have only one place where the `he` dependency is.
-- Write tests in React Testing Library and Cypress.
-- Randomise the answers (at the moment the correct answer is always highlighted) 
-- Change the favicon and page title
-- adding eslint and prettier.7
-- add a better ci client for example Circle CI. At the moment it uses the netlify command yarn test:ci && yarn build
-- accessibility
+- Graceful degredation: show error if no response.
+- accessibility checks with WHAT Chrome extension and add the required headers. 
 - lighthouse score.
-- look at bug in incorrect_answers.map JoJo&#039;s Bizarre Adventure 
-- show if no response.
+- add a better ci client for example Circle CI. At the moment it uses the command `ci:pipeline` which runs linting, typescript and unit tests before building the site.
+- Add Storybook. This ensures that components are kept small.
+- Write end to end tests using Cypress.
+
+
+## TODO
+- Change the favicon and page title
+- Show better loading spinner to not obscure the page title
+- add question numbers and answer letters (A,B,C,D)
+- remove console errors.
