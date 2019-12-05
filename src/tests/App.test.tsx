@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
+import App from "../App";
 import renderer from "react-test-renderer";
-import CategoryList from "./components/CategoryList";
-import { Question, Category } from "./types/frontendTypes";
-import QuizEngine from "./components/QuizEngine";
+import CategoryList from "../components/CategoryList";
+import { Question, Category } from "../types/frontendTypes";
+import QuizEngine from "../components/QuizEngine";
 const lodash = require.requireActual("lodash");
 
 const cat: Category[] = [
