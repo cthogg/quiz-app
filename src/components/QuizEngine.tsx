@@ -1,8 +1,8 @@
 import React from "react";
-import CategoryList from "./components/CategoryList";
-import QuestionComp from "./components/Question";
-import { emptyCategoryArray } from "./App";
-import { Question, Category } from "./frontendTypes";
+import CategoryList from "./CategoryList";
+import QuestionComp from "./Question";
+import { emptyCategoryArray } from "../App";
+import { Question, Category } from "../types/frontendTypes";
 
 interface QuizEngineProps {
   categories: Category[];

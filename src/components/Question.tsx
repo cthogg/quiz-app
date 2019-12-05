@@ -1,6 +1,6 @@
 import React from "react";
 import he from "he";
-import { Question, Answer } from "../frontendTypes";
+import { Question, Answer } from "../types/frontendTypes";
 import _ from "lodash";
 const QuestionComp: React.FC<{
   question: Question;

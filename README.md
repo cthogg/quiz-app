@@ -35,7 +35,8 @@ An app to help quiz masters generate a quiz which they can read aloud to their f
 - remove cateogories.js
 - remove logo.svg
 - remove index.css
-- 
+- add description of quiz
+- make text bold.
 
 - Bugfix: Sometimes when after pressing on the new category (and after the loading icon has disappeared there is a flash as the component re-renders).
 - add a better ci client for example Circle CI. At the moment it uses the command `ci:pipeline` which runs linting, typescript and unit tests before building the site.

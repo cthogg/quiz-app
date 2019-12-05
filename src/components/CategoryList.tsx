@@ -1,5 +1,5 @@
 import React from "react";
-import { Category } from "../frontendTypes";
+import { Category } from "../types/frontendTypes";
 
 const CategoryList: React.FC<{
   categories: Category[];

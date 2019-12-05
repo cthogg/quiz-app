@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import QuizEngine from "./QuizEngine";
+import QuizEngine from "./components/QuizEngine";
 import {
   Question,
   convertBackendQuestionsToFrontendQuestions,
   Category,
   convertBackendCategoriesToFrontendCategories
-} from "./frontendTypes";
+} from "./types/frontendTypes";
 import "./App.sass";
 
 export const emptyCategoryArray = {} as Category[];
