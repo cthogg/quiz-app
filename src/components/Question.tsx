@@ -8,7 +8,7 @@ const QuestionComp: React.FC<{
 }> = ({ question, questionNumber }) => {
   const letterArray: string[] = "ABCDEFGHIJKL".split("");
   return (
-    <section className="section">
+    <section className={"questionCard"}>
       <div className="card">
         {question !== undefined && (
           <div className="card-content">
@@ -23,7 +23,11 @@ const QuestionComp: React.FC<{
                     return answer.isCorrect ? (
                       <li key={index}>
                         {" "}
-                        {letterArray[index]} <em> {answer.answer} </em>{" "}
+                        {letterArray[index]}{" "}
+                        <em className="has-text-weight-bold">
+                          {" "}
+                          {answer.answer}{" "}
+                        </em>{" "}
                       </li>
                     ) : (
                       <li key={index}>

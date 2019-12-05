@@ -33,6 +33,9 @@ Array [
     >
        Quiz Pro 
     </p>
+    <p>
+       Create a quiz to read aloud to your friends or family 
+    </p>
   </section>,
   <section
     className="section"
@@ -59,7 +62,7 @@ Array [
   >
     <span>
       <section
-        className="section"
+        className="questionCard"
       >
         <div
           className="card"
@@ -82,7 +85,9 @@ Array [
                    
                   A
                    
-                  <em>
+                  <em
+                    className="has-text-weight-bold"
+                  >
                      
                     T. Yoshisaur Munchakoopas
                      
@@ -123,7 +128,7 @@ Array [
         </div>
       </section>
       <section
-        className="section"
+        className="questionCard"
       >
         <div
           className="card"
@@ -146,7 +151,9 @@ Array [
                    
                   A
                    
-                  <em>
+                  <em
+                    className="has-text-weight-bold"
+                  >
                      
                     Catherine of Aragon
                      
@@ -196,6 +203,9 @@ exports[`renders correctly 1`] = `
       className="is-size-2"
     >
        Quiz Pro 
+    </p>
+    <p>
+       Create a quiz to read aloud to your friends or family 
     </p>
   </section>
   <div

@@ -29,16 +29,8 @@ An app to help quiz masters generate a quiz which they can read aloud to their f
 - Documentation: If I had more time I would add some architectural decision records within the repository. ADRs. To save you looking back and asking, why do we use this library? Why was it made like this? It often forces us to take some time at least on a decision and recognising other ways.
 
 ## TODO
-- move QuizEngine to components
-- move types to own folder.
-- move tests to own folder.
-- remove cateogories.js
-- remove logo.svg
-- remove index.css
-- add description of quiz
-- make text bold.
-
 - Bugfix: Sometimes when after pressing on the new category (and after the loading icon has disappeared there is a flash as the component re-renders).
+- Create a test for the whole app (for example by mocking the api request)
 - add a better ci client for example Circle CI. At the moment it uses the command `ci:pipeline` which runs linting, typescript and unit tests before building the site.
 - Add Storybook. This ensures that components are kept small.
 - Write end to end tests using Cypress.
