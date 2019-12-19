@@ -66,6 +66,11 @@ Array [
       >
         <div
           className="card"
+          style={
+            Object {
+              "border": "2px solid blue",
+            }
+          }
         >
           <div
             className="card-content"
@@ -81,7 +86,9 @@ Array [
                  
               </p>
               <ul>
-                <li>
+                <li
+                  onClick={[Function]}
+                >
                    
                   A
                    
@@ -94,28 +101,36 @@ Array [
                   </em>
                    
                 </li>
-                <li>
+                <li
+                  onClick={[Function]}
+                >
                    
                   B
                    
                   Yoshi
                    
                 </li>
-                <li>
+                <li
+                  onClick={[Function]}
+                >
                    
                   C
                    
                   T. Yoshisotop Munchakoopas
                    
                 </li>
-                <li>
+                <li
+                  onClick={[Function]}
+                >
                    
                   D
                    
                   Yossy
                    
                 </li>
-                <li>
+                <li
+                  onClick={[Function]}
+                >
                    
                   E
                    
@@ -132,6 +147,11 @@ Array [
       >
         <div
           className="card"
+          style={
+            Object {
+              "border": "2px solid blue",
+            }
+          }
         >
           <div
             className="card-content"
@@ -147,7 +167,9 @@ Array [
                  
               </p>
               <ul>
-                <li>
+                <li
+                  onClick={[Function]}
+                >
                    
                   A
                    
@@ -160,21 +182,27 @@ Array [
                   </em>
                    
                 </li>
-                <li>
+                <li
+                  onClick={[Function]}
+                >
                    
                   B
                    
                   Jane Seymour
                    
                 </li>
-                <li>
+                <li
+                  onClick={[Function]}
+                >
                    
                   C
                    
                   Anne Boleyn
                    
                 </li>
-                <li>
+                <li
+                  onClick={[Function]}
+                >
                    
                   D
                    

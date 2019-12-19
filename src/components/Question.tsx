@@ -7,9 +7,30 @@ const QuestionComp: React.FC<{
   questionNumber: number;
 }> = ({ question, questionNumber }) => {
   const letterArray: string[] = "ABCDEFGHIJKL".split("");
+  const [isAnswerTrue, setIsAnswerTrue] = React.useState<null | boolean>(null);
+  const borderColorKey = {
+    null: "black",
+    true: "green",
+    false: "red"
+  };
+  const borderStyle = (isAnswerTrue: null | boolean) => {
+    if (isAnswerTrue === null) {
+      return "blue";
+    }
+    if (isAnswerTrue === true) {
+      return "green";
+    }
+    if (isAnswerTrue === false) {
+      return "red";
+    }
+  };
+
   return (
     <section className={"questionCard"}>
-      <div className="card">
+      <div
+        className="card"
+        style={{ border: `2px solid ${borderStyle(isAnswerTrue)}` }}
+      >
         {question !== undefined && (
           <div className="card-content">
             <div className="content">
@@ -21,7 +42,7 @@ const QuestionComp: React.FC<{
                 {_.shuffle(question.answers).map(
                   (answer: Answer, index: number) => {
                     return answer.isCorrect ? (
-                      <li key={index}>
+                      <li key={index} onClick={() => setIsAnswerTrue(true)}>
                         {" "}
                         {letterArray[index]}{" "}
                         <em className="has-text-weight-bold">
@@ -30,7 +51,7 @@ const QuestionComp: React.FC<{
                         </em>{" "}
                       </li>
                     ) : (
-                      <li key={index}>
+                      <li key={index} onClick={() => setIsAnswerTrue(false)}>
                         {" "}
                         {letterArray[index]} {answer.answer}{" "}
                       </li>
