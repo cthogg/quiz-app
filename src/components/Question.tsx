@@ -8,6 +8,11 @@ const QuestionComp: React.FC<{
 }> = ({ question, questionNumber }) => {
   const letterArray: string[] = "ABCDEFGHIJKL".split("");
   const [isAnswerTrue, setIsAnswerTrue] = React.useState<null | boolean>(null);
+  const [
+    lastAnswerAnswered,
+    setLastAnswerAnswered
+  ] = React.useState<null | Answer>(null);
+
   const borderStyle = (isAnswerTrue: null | boolean) => {
     if (isAnswerTrue === null) {
       return "grey";
@@ -36,11 +41,16 @@ const QuestionComp: React.FC<{
               <ul>
                 {_.sortBy(question.answers, q => q.answer).map(
                   (answer: Answer, index: number) => {
-                    const onClickFunction = () =>
+                    const onClickFunction = () => {
                       setIsAnswerTrue(answer.isCorrect);
+                      setLastAnswerAnswered(answer);
+                    };
+                    const answerWasLastClicked = answer === lastAnswerAnswered;
                     return (
                       <li
-                        className="answer"
+                        className={`answer ${
+                          answerWasLastClicked ? "answered" : ""
+                        }`}
                         key={index}
                         onClick={onClickFunction}
                       >

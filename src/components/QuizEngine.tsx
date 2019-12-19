@@ -22,7 +22,7 @@ const QuizEngine: React.FunctionComponent<QuizEngineProps> = ({
     <React.Fragment>
       <section className="section">
         <p className="is-size-2"> Quiz Pro </p>
-        <p> Create a quiz to read aloud to your friends or family </p>
+        <p> Answer the questions below </p>
       </section>
       {categories !== emptyCategoryArray && (
         <CategoryList

@@ -2,7 +2,7 @@
 
 https://quizpro.netlify.com/
 
-An app to help quiz masters generate a quiz which they can read aloud to their friends or family.
+A simple quiz app
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/53180c2e-e4d9-4657-8e3d-f2c69fb38016/deploy-status)](https://app.netlify.com/sites/mystifying-roentgen-274bc4/deploys)
 
@@ -18,7 +18,9 @@ An app to help quiz masters generate a quiz which they can read aloud to their f
 - As a user, when I visit the page for the first time, then I can see a dropdown with a list of available categories.
 - As a user, when I visit the page for the first time, then I can see 10 questions from the general knowledge category, with possible answers and the correct answer of each question highlighted.
 - As a user when I click on the dropdown then I can see a list of available categories
-- As a user of when I click on a category then I can see 10 questions of that category, with the correct answer of each question highlighted.
+- As a user, when I click on a category then I can see 10 questions of that category, with the correct answer of each question highlighted.
+- As a user, when I click on the correct answer then I can see feedback.
+- As a user, when I click on the incorrect answer then I can see feedback that my answer is incorrect. 
 
 ## Design Philosophy
 - Testing. I find snapshot testing and easy and quick way to spot visual regressions. Also code which is easy to test is often better designed code. So it adding tests raises the bar in coding standards. 
@@ -36,4 +38,5 @@ An app to help quiz masters generate a quiz which they can read aloud to their f
 - Write end to end tests using Cypress.
 - Graceful degredation: show error if no response.
 - accessibility checks with Axe Chrome extension and adding the required headers. 
+- easy to change theme on category change
 - lighthouse score.

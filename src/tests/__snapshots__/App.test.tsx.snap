@@ -34,7 +34,7 @@ Array [
        Quiz Pro 
     </p>
     <p>
-       Create a quiz to read aloud to your friends or family 
+       Answer the questions below 
     </p>
   </section>,
   <section
@@ -87,7 +87,7 @@ Array [
               </p>
               <ul>
                 <li
-                  className="answer"
+                  className="answer "
                   onClick={[Function]}
                 >
                    
@@ -97,7 +97,7 @@ Array [
                    
                 </li>
                 <li
-                  className="answer"
+                  className="answer "
                   onClick={[Function]}
                 >
                    
@@ -107,7 +107,7 @@ Array [
                    
                 </li>
                 <li
-                  className="answer"
+                  className="answer "
                   onClick={[Function]}
                 >
                    
@@ -117,7 +117,7 @@ Array [
                    
                 </li>
                 <li
-                  className="answer"
+                  className="answer "
                   onClick={[Function]}
                 >
                    
@@ -127,7 +127,7 @@ Array [
                    
                 </li>
                 <li
-                  className="answer"
+                  className="answer "
                   onClick={[Function]}
                 >
                    
@@ -167,7 +167,7 @@ Array [
               </p>
               <ul>
                 <li
-                  className="answer"
+                  className="answer "
                   onClick={[Function]}
                 >
                    
@@ -177,7 +177,7 @@ Array [
                    
                 </li>
                 <li
-                  className="answer"
+                  className="answer "
                   onClick={[Function]}
                 >
                    
@@ -187,7 +187,7 @@ Array [
                    
                 </li>
                 <li
-                  className="answer"
+                  className="answer "
                   onClick={[Function]}
                 >
                    
@@ -197,7 +197,7 @@ Array [
                    
                 </li>
                 <li
-                  className="answer"
+                  className="answer "
                   onClick={[Function]}
                 >
                    
@@ -230,7 +230,7 @@ exports[`renders correctly 1`] = `
        Quiz Pro 
     </p>
     <p>
-       Create a quiz to read aloud to your friends or family 
+       Answer the questions below 
     </p>
   </section>
   <div
