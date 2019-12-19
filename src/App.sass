@@ -24,6 +24,15 @@ $input-shadow: none;
 .questionCard
     padding: 0.5rem
 
+.answer 
+    &:hover
+        background-color: $body-background-color
+        cursor: pointer
+
+.answered
+    background-color: $body-background-color
+
+
 // Import only what you need from Bulma
 @import '../node_modules/bulma/sass/utilities/_all.sass';
 @import '../node_modules/bulma/sass/grid/_all.sass';

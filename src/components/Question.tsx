@@ -8,14 +8,9 @@ const QuestionComp: React.FC<{
 }> = ({ question, questionNumber }) => {
   const letterArray: string[] = "ABCDEFGHIJKL".split("");
   const [isAnswerTrue, setIsAnswerTrue] = React.useState<null | boolean>(null);
-  const borderColorKey = {
-    null: "black",
-    true: "green",
-    false: "red"
-  };
   const borderStyle = (isAnswerTrue: null | boolean) => {
     if (isAnswerTrue === null) {
-      return "blue";
+      return "grey";
     }
     if (isAnswerTrue === true) {
       return "green";
@@ -39,19 +34,16 @@ const QuestionComp: React.FC<{
                 {questionNumber}.&nbsp;{he.decode(question.question)}{" "}
               </p>
               <ul>
-                {_.shuffle(question.answers).map(
+                {_.sortBy(question.answers, q => q.answer).map(
                   (answer: Answer, index: number) => {
-                    return answer.isCorrect ? (
-                      <li key={index} onClick={() => setIsAnswerTrue(true)}>
-                        {" "}
-                        {letterArray[index]}{" "}
-                        <em className="has-text-weight-bold">
-                          {" "}
-                          {answer.answer}{" "}
-                        </em>{" "}
-                      </li>
-                    ) : (
-                      <li key={index} onClick={() => setIsAnswerTrue(false)}>
+                    const onClickFunction = () =>
+                      setIsAnswerTrue(answer.isCorrect);
+                    return (
+                      <li
+                        className="answer"
+                        key={index}
+                        onClick={onClickFunction}
+                      >
                         {" "}
                         {letterArray[index]} {answer.answer}{" "}
                       </li>

@@ -68,7 +68,7 @@ Array [
           className="card"
           style={
             Object {
-              "border": "2px solid blue",
+              "border": "2px solid grey",
             }
           }
         >
@@ -87,30 +87,27 @@ Array [
               </p>
               <ul>
                 <li
+                  className="answer"
                   onClick={[Function]}
                 >
                    
                   A
                    
-                  <em
-                    className="has-text-weight-bold"
-                  >
-                     
-                    T. Yoshisaur Munchakoopas
-                     
-                  </em>
+                  Anne Boleyn
                    
                 </li>
                 <li
+                  className="answer"
                   onClick={[Function]}
                 >
                    
                   B
                    
-                  Yoshi
+                  T. Yoshisaur Munchakoopas
                    
                 </li>
                 <li
+                  className="answer"
                   onClick={[Function]}
                 >
                    
@@ -120,21 +117,23 @@ Array [
                    
                 </li>
                 <li
+                  className="answer"
                   onClick={[Function]}
                 >
                    
                   D
                    
-                  Yossy
+                  Yoshi
                    
                 </li>
                 <li
+                  className="answer"
                   onClick={[Function]}
                 >
                    
                   E
                    
-                  Anne Boleyn
+                  Yossy
                    
                 </li>
               </ul>
@@ -149,7 +148,7 @@ Array [
           className="card"
           style={
             Object {
-              "border": "2px solid blue",
+              "border": "2px solid grey",
             }
           }
         >
@@ -168,45 +167,43 @@ Array [
               </p>
               <ul>
                 <li
+                  className="answer"
                   onClick={[Function]}
                 >
                    
                   A
                    
-                  <em
-                    className="has-text-weight-bold"
-                  >
-                     
-                    Catherine of Aragon
-                     
-                  </em>
+                  Anne Boleyn
                    
                 </li>
                 <li
+                  className="answer"
                   onClick={[Function]}
                 >
                    
                   B
                    
-                  Jane Seymour
+                  Catherin Parr
                    
                 </li>
                 <li
+                  className="answer"
                   onClick={[Function]}
                 >
                    
                   C
                    
-                  Anne Boleyn
+                  Catherine of Aragon
                    
                 </li>
                 <li
+                  className="answer"
                   onClick={[Function]}
                 >
                    
                   D
                    
-                  Catherin Parr
+                  Jane Seymour
                    
                 </li>
               </ul>
