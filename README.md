@@ -40,3 +40,7 @@ A simple quiz app
 - accessibility checks with Axe Chrome extension and adding the required headers. 
 - easy to change theme on category change
 - lighthouse score.
+- As as a user I can only see one question at a time.
+- As a user I can see my score at the end.
+- As a user I can share the result of my quiz via WhatsApp.
+- As a user I can challenge a friend to a quiz duel so we can play at the same time with the same questions.
