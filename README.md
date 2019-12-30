@@ -39,7 +39,7 @@ A simple quiz app
 - Graceful degredation: show error if no response.
 - accessibility checks with Axe Chrome extension and adding the required headers. 
 - easy to change theme on category change
-- lighthouse score.
+- add lighthouse score ci.
 - As as a user I can only see one question at a time.
 - As a user I can see my score at the end.
 - As a user I can share the result of my quiz via WhatsApp.
